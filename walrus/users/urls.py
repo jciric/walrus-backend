@@ -10,3 +10,10 @@
 #     path('', include(router.urls)),
 #     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 # ]
+from django.urls import path
+from users.views import UserViewList, UserViewDetail
+
+urlpatterns = [
+    path("users/", UserViewList.as_view(), name="users_list"),
+    path("users/<int:pk>/", UserViewDetail.as_view(), name="users_detail")
+]

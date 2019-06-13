@@ -17,7 +17,7 @@ class UserManager(models.Manager):
                          )
 
         user.set_password(password)
-        
+
         try:
             user.save(using=self._db)
         except IntegrityError:
