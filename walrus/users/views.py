@@ -10,6 +10,10 @@ from rest_framework import authentication, permissions
 
 class UserViewList(APIView):
 
+    @classmethod
+    def get_extra_actions(cls):
+        return []
+
     def get(self, request, format=None):
         queryset = User.objects.all()[:20]
         data = UserSerializer(queryset, many=True).data
@@ -19,6 +23,10 @@ class UserViewDetail(APIView):
 
     authentication_classes = (authentication.TokenAuthentication,)
     permission_classes = (permissions.IsAdminUser,)
+
+    @classmethod
+    def get_extra_actions(cls):
+        return []
 
     def get(self, request, pk):
         queryset = get_object_or_404(User, pk=pk)
