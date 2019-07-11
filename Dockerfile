@@ -4,7 +4,7 @@ MAINTAINER Jovana Ciric
 ENV PYTHONUNBUFFERED 1
 
 # Install dependencies
-COPY ./requirements.txt /requirements.txt
+COPY ./walrus/requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
 # Setup directory structure
