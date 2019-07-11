@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-# from users.models import users
 from django.contrib.auth.models import User
 from rest_framework.views import APIView
 from rest_framework.response import Response

@@ -18,6 +18,7 @@ from users import views, urls
 from django.urls import include, path, re_path
 from rest_framework.routers import DefaultRouter
 from users.views import UserViewList
+from core.views import ContentViewList
 
 # from rest_framework.documentation import include_docs_urls
 
@@ -29,7 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     re_path('api/', include('users.urls')),
-    # path('docs/', include_docs_urls(title='WalrusDocs'))
+    re_path('api/', include('core.urls')),
     ]
 
 urlpatterns += router.urls
