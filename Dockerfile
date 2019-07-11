@@ -8,9 +8,9 @@ COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
 # Setup directory structure
-RUN mkdir /app
-WORKDIR /app
-COPY ./app/ /app
+RUN mkdir /walrus
+WORKDIR /walrus
+COPY ./walrus/ /walrus
 
-RUN adduser -D user
-USER user
+RUN adduser -D walrus
+USER walrus

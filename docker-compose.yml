@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  walrus:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./walrus:/walrus
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
